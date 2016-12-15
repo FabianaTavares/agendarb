@@ -1,0 +1,215 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Sistema de Agenda de Contatos API",
+        "description": "Sistema de Agenda de Contatos - RB",
+        "contact": {
+            "email": "contato@frtavares.com.br"
+        },
+        "license": {
+            "name": "",
+            "url": ""
+        },
+        "version": "1.0.0"
+    },
+    "basePath": "/Public/agendarb/backend/laravel/public/",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/operadoras": {
+            "get": {
+                "tags": [
+                    "operadoras"
+                ],
+                "summary": "Lista todas as operadoras cadastradas",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "operadoras",
+                        "in": "query",
+                        "description": "Retorna todas as operadoras",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/operadora"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "operadoras"
+                ],
+                "summary": "Criar uma nova Operadora",
+                "operationId": "createOperadoras",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "required": [
+                                "nome",
+                                "codigo"
+                            ],
+                            "properties": {
+                                "nome": {
+                                    "type": "string"
+                                },
+                                "codigo": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/operadoras/{id}": {
+            "get": {
+                "tags": [
+                    "operadoras"
+                ],
+                "summary": "retorna uma operadora por id",
+                "description": "Retorna uma operadora especifico",
+                "operationId": "find",
+                "consumes": [
+                    "application/xml",
+                    "application/json",
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id da operadora para retorno",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/operadora"
+                        }
+                    },
+                    "400": {
+                        "description": "Id inv\u00e1lido"
+                    },
+                    "404": {
+                        "description": "operadora n\u00e3o encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "operadoras"
+                ],
+                "summary": "Editar operadora",
+                "description": "Editar uma operadora",
+                "operationId": "edit",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "informe o id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "required": [
+                                "nome",
+                                "codigo"
+                            ],
+                            "properties": {
+                                "nome": {
+                                    "type": "string"
+                                },
+                                "codigo": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Operadora n\u00e3o encontrada"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "operadoras"
+                ],
+                "summary": "Excluir uma operadora",
+                "description": "",
+                "operationId": "delete",
+                "consumes": [
+                    "application/xml",
+                    "application/json",
+                    "multipart/form-data",
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Deleta uma operadora por id informado",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid pet value"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
