@@ -36,14 +36,13 @@ Seguir o padrão do swagger mapeando suas decorations nas rotas em seguida rodar
   http://localhost:8000/swagger.json
 ````
 
-- Se for realizar testes pelo swagger após entrar com o usuario e senha será gerado um token.
-- Ao ir no botão "Authorize" e inserir o token no campo value é necessário escrever a palavra Bearer na frente.
+- Se for realizar testes pelo swagger após entrar com o usuario e senha será gerado um token.Ao ir no botão "Authorize" e inserir o token no campo value é necessário escrever a palavra Bearer na frente.
 - Ex: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE1NTU4NzE3MjQsImV4cCI6MTU1NTg3NTMyNCwibmJmIjoxNTU1ODcxNzI0LCJqdGkiOiJxcnlGMHcxSVpSbnkydjNwIiwic3ViIjoxLCJwcnYiOiIyYTczMDhmNDUwNzQ2NmQwYmEwZGVkYTkwYjg2MWY4NzMwYzQ4MTYwIn0.R-eqmkRxo9JDUrwTxCOwhjsHXgI7azT06HQAR1MD5-I
 
-## Especificações de Banco de Dados
+Especificações de Banco de Dados
 -------
 
-## Instalação
+Instalação
 ----------
 
 Atualize as dependências de backend execuntando o comando:
@@ -67,7 +66,7 @@ php artisan key:generate
 ````
 O comando acima te retornará uma chave que deve ser colada em `APP_KEY=` do arquivo `.env`.
 
-#####No terminal, na pasta da aplicação:
+### No terminal, na pasta da aplicação:
 
 Logo após crie e inicialize o banco de dados com o seguinte comando:
 ````
@@ -97,19 +96,19 @@ rode também o comando que gera as seeds:
 php artisan migrate
 ````
 
-#####No terminal, na pasta da aplicação:
+### No terminal, na pasta da aplicação:
 Crie um link para o diretório de arquivos executando o comando abaixo:
 ````
 php artisan storage:link
 ````
 
-#####Configuração de E-mail
+### Configuração de E-mail
 No arquivo .env é necessário parametrizar a configuração de SSL
 ````
 MAIL_SSL=true
 ````
 
-###Para desenvolvedores
+### Para desenvolvedores
 
 Utilizamos o plugin [Clockwork](https://github.com/itsgoingd/clockwork) para facilitar o DEBUG do sistema no próprio navegador.
 
@@ -131,7 +130,6 @@ public/cron_jobs
 ````
 
 ## ATUALIZAÇÕES
-----------
 
 Para atualizar o sistema é necessário seguir os passos:
 -
