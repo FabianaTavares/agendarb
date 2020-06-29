@@ -4,7 +4,7 @@
         "title": "Sistema de Agenda de Contatos API",
         "description": "Sistema de Agenda de Contatos - RB",
         "contact": {
-            "email": "contato@frtavares.com.br"
+            "email": ""
         },
         "license": {
             "name": "",
@@ -12,9 +12,11 @@
         },
         "version": "1.0.0"
     },
-    "basePath": "/Public/agendarb/backend/laravel/public/",
+    "host": "localhost:8000",
+    "basePath": "",
     "schemes": [
-        "http"
+        "http",
+        "https"
     ],
     "consumes": [
         "application/json"
@@ -32,15 +34,13 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "name": "operadoras",
-                        "in": "query",
-                        "description": "Retorna todas as operadoras",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "operadoras",
+                    "in": "query",
+                    "description": "Retorna todas as operadoras",
+                    "required": false,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "successful operation",
@@ -62,27 +62,25 @@
                 ],
                 "summary": "Criar uma nova Operadora",
                 "operationId": "createOperadoras",
-                "parameters": [
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "required": [
-                                "nome",
-                                "codigo"
-                            ],
-                            "properties": {
-                                "nome": {
-                                    "type": "string"
-                                },
-                                "codigo": {
-                                    "type": "integer"
-                                }
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "required": [
+                            "nome",
+                            "codigo"
+                        ],
+                        "properties": {
+                            "nome": {
+                                "type": "string"
+                            },
+                            "codigo": {
+                                "type": "integer"
                             }
                         }
                     }
-                ],
+                }],
                 "responses": {}
             }
         },
@@ -103,16 +101,14 @@
                     "application/xml",
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id da operadora para retorno",
-                        "required": true,
-                        "type": "integer",
-                        "format": "int64"
-                    }
-                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "id da operadora para retorno",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
                 "responses": {
                     "200": {
                         "description": "successful operation",
@@ -139,8 +135,7 @@
                     "application/xml",
                     "application/json"
                 ],
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "id",
                         "in": "path",
                         "description": "informe o id",
@@ -193,16 +188,14 @@
                     "application/xml",
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Deleta uma operadora por id informado",
-                        "required": true,
-                        "type": "integer",
-                        "format": "int64"
-                    }
-                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Deleta uma operadora por id informado",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
                 "responses": {
                     "400": {
                         "description": "Invalid pet value"

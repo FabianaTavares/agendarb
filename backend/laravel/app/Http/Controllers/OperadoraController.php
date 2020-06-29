@@ -98,7 +98,6 @@ class OperadoraController extends Controller
     }
 
     /**
-     *
      * @SWG\Post(
      * 		path="/operadoras",
      * 		tags={"operadoras"},

@@ -14,12 +14,22 @@
 
 use Swagger\Annotations as SWG;
 
-/* vendor/bin/swagger app -o public/swagger.json */
+/*
+ * vendor/bin/swagger app -o public/swagger.json
+ * composer dump-autoload
+ * Acessar o Swagger para Testes de API
+ * Colocar na url do navegador o caminho correspondente ao projeto a index do swagger Ex: http://localhost:8000/docs/index.html
+ * Em seguida na url do swagger colocar o caminho do swagger.json: http://localhost:8000/swagger.json
+ * Se for realizar testes pelo swagger após entrar com o usuario e senha será gerado um token.
+ * Ao ir no botão "Authorize" e inserir o token no campo value é necessário escrever a palavra Bearer na frente.
+ * Ex: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE1NTU4NzE3MjQsImV4cCI6MTU1NTg3NTMyNCwibmJmIjoxNTU1ODcxNzI0LCJqdGkiOiJxcnlGMHcxSVpSbnkydjNwIiwic3ViIjoxLCJwcnYiOiIyYTczMDhmNDUwNzQ2NmQwYmEwZGVkYTkwYjg2MWY4NzMwYzQ4MTYwIn0.R-eqmkRxo9JDUrwTxCOwhjsHXgI7azT06HQAR1MD5-I
+
+*/
 
 /**
  * @SWG\Swagger(
  *          schemes={"http"},
- *          basePath="/Public/agendarb/backend/laravel/public/",
+ *          basePath="http://localhost:8000/swagger.json",
  *          produces={"application/json"},
  * 	        consumes={"application/json"},
  *          @SWG\Info(
